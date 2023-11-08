@@ -1,7 +1,7 @@
 #####  源码简介：    
 本程序用于自签SSL证书，拥有完善的根级CA证书、中级CA证书、多级CA证书、服务证书的签发。   
 #####  演示图片：    
-![ssladmin.jpg](https://www.gacjie.cn/usr/uploads/2021/11/1882901427.jpg)
+![ssladmin.jpg](https://raw.githubusercontent.com/gacjie/ssladmin/main/ssladmin.jpg)
 ##### 功能说明:    
  【签发机构】支持签发根CA证书，以及多级CA证书。    
  【签发证书】支持自定义CA证书签发服务证书。    
