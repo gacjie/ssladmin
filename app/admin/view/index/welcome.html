@@ -1,0 +1,170 @@
+{extend name="layout/default" /}
+
+{block name="head"}
+<title>欢迎</title>
+<script type="text/javascript" src="/static/lib/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="/static/lib/echarts/echarts.theme.js"></script>
+<script type="text/javascript" src="/static/lib/echarts/world/js/china.js"></script>
+{/block}
+{block name="content"}
+<div class="ok-body console">
+	<div class="home">
+		<div class="layui-row layui-col-space15">
+			<div class="layui-col-xs6 layui-col-md3">
+				<div class="layui-card">
+					<div class="ok-card-body">
+						<div class="img-box" ok-pc-in-show>
+							<img src="/static/images/home-01.png" alt="none" />
+						</div>
+						<div class="cart-r">
+							<div class="stat-text incomes-num">0</div>
+							<div class="stat-heading">收入</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="layui-col-xs6 layui-col-md3">
+				<div class="layui-card ">
+					<div class="ok-card-body">
+						<div class="img-box" ok-pc-in-show>
+							<img src="/static/images/home-02.png" alt="none" />
+						</div>
+						<div class="cart-r">
+							<div class="stat-text goods-num">0</div>
+							<div class="stat-heading">商品</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="layui-col-xs6 layui-col-md3">
+				<div class="layui-card">
+					<div class="ok-card-body">
+						<div class="img-box" ok-pc-in-show>
+							<img src="/static/images/home-03.png" alt="none" />
+						</div>
+						<div class="cart-r">
+							<div class="stat-text blogs-num">0</div>
+							<div class="stat-heading">博客</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="layui-col-xs6 layui-col-md3">
+				<div class="layui-card">
+					<div class="ok-card-body">
+						<div class="img-box" ok-pc-in-show>
+							<img src="/static/images/home-04.png" alt="none" />
+						</div>
+						<div class="cart-r">
+							<div class="stat-text fans-num">0</div>
+							<div class="stat-heading">用户</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="layui-row layui-col-space15">
+			<div class="layui-col-md8">
+				<div class="layui-card">
+					<div class="layui-card-header">
+						<div class="ok-card-title">用户排行榜</div>
+					</div>
+					<div class="ok-card-body map-body">
+						<div style="height: 100%;" id="userSourceMap"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="layui-col-md4">
+				<div class="layui-card">
+					<div class="layui-card-header">
+						<div class="ok-card-title">用户访问</div>
+					</div>
+					<div class="ok-card-body map-body">
+						<div class="progress-box ">
+							<div class="pro-head">
+								<img src="/static/images/face.jpg" alt="none" />
+							</div>
+							<div class="pro-data">
+								<h4 class="por-title">Visits</h4>
+								<div class="por-txt pro-a">用户比例</div>
+								<div class="layui-progress" lay-filter="pro-a">
+									<div class="layui-progress-bar per-bg-a" lay-percent="35%"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="progress-box ">
+							<div class="pro-head">
+								<img src="/static/images/face.jpg" alt="none" />
+							</div>
+							<div class="pro-data">
+								<h4 class="por-title">Visits</h4>
+								<div class="por-txt pro-a">用户比例</div>
+								<div class="layui-progress" lay-filter="pro-b">
+									<div class="layui-progress-bar per-bg-b" lay-percent="15%"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="progress-box ">
+							<div class="pro-head">
+								<img src="/static/images/face.jpg" alt="none" />
+							</div>
+							<div class="pro-data">
+								<h4 class="por-title">Visits</h4>
+								<div class="por-txt pro-c">用户比例</div>
+								<div class="layui-progress" lay-filter="pro-c">
+									<div class="layui-progress-bar per-bg-c" lay-percent="20%"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="progress-box ">
+							<div class="pro-head">
+								<img src="/static/images/face.jpg" alt="none" />
+							</div>
+							<div class="pro-data">
+								<h4 class="por-title">Visits</h4>
+								<div class="por-txt pro-d">用户比例</div>
+								<div class="layui-progress" lay-filter="pro-d">
+									<div class="layui-progress-bar per-bg-d" lay-percent="30%"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="layui-row layui-col-space15">
+			<div class="layui-col-md6">
+				<div class="layui-card">
+					<div class="ok-card-body ">
+						<table id="userData" lay-filter="userdata"></table>
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md6">
+				<div class="layui-card">
+					<div class="ok-card-body ">
+						<div class="map-china" id="userLocationMap"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{/block}
+{block name="scripts"}
+<script type="text/javascript" src="/static/js/console.js"></script>
+<script>
+	layui.use([], function () {
+		okLoading.close();
+	});
+</script>
+{/block}
